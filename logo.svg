@@ -1,0 +1,24 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SafeVision logo">
+  <defs>
+    <linearGradient id="svGrad" x1="96" y1="96" x2="416" y2="416" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#0EA5B7"/>
+    </linearGradient>
+    <linearGradient id="svSweep" x1="256" y1="256" x2="420" y2="150" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="#0A0E1A"/>
+  <rect x="16.5" y="16.5" width="479" height="479" rx="111.5" stroke="url(#svGrad)" stroke-opacity="0.35"/>
+  <!-- radar arcs -->
+  <circle cx="256" cy="256" r="60" stroke="url(#svGrad)" stroke-width="14" fill="none"/>
+  <path d="M256 150 A106 106 0 0 1 362 256" stroke="url(#svGrad)" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.85"/>
+  <path d="M256 108 A148 148 0 0 1 404 256" stroke="url(#svGrad)" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.5"/>
+  <!-- sweep -->
+  <path d="M256 256 L410 150 A188 188 0 0 1 420 260 Z" fill="url(#svSweep)" opacity="0.55"/>
+  <!-- center + detected point -->
+  <circle cx="256" cy="256" r="18" fill="#22D3EE"/>
+  <circle cx="352" cy="176" r="16" fill="#FFB020"/>
+  <circle cx="352" cy="176" r="30" stroke="#FFB020" stroke-width="6" fill="none" opacity="0.5"/>
+</svg>
