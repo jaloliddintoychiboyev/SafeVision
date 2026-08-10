@@ -207,6 +207,12 @@ img{max-width:100%;display:block}
 .avatar{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.2rem;background:var(--grad);color:#04121A;margin-bottom:16px}
 .avatar--open{background:rgba(255,255,255,.05);border:1px dashed var(--line-strong);color:var(--muted);font-size:1.6rem}
 .card--open{border-style:dashed}
+.card--person{position:relative}
+.card--lead{border-color:rgba(34,211,238,.35);background:linear-gradient(160deg,rgba(34,211,238,.06),rgba(20,28,46,.4))}
+.card--lead .tag{position:absolute;top:20px;right:20px;margin:0}
+.person__link{display:inline-block;margin-top:14px;font-size:.85rem;font-weight:600;color:var(--cyan);border-bottom:1px solid rgba(34,211,238,.3);padding-bottom:1px;transition:border-color .18s}
+.person__link:hover{border-color:var(--cyan)}
+.cta__contact{color:var(--cyan)!important;font-weight:600;font-size:.95rem!important;margin:0 auto 20px!important}
 
 /* ============ ASK / ALLOCATION ============ */
 .card--ask h3{font-size:1.08rem}
