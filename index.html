@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SafeVision — Radar that sees danger 15 seconds early</title>
+  <meta name="description" content="SafeVision turns every car into a moving 24 GHz mmWave radar sensor — detecting road hazards up to 50 m away and warning drivers 15 seconds in advance with 92% accuracy. President Tech Award 2026." />
+  <meta name="theme-color" content="#0A0E1A" />
+  <link rel="icon" type="image/svg+xml" href="logo.svg" />
+  <meta property="og:title" content="SafeVision — A modern solution for safe roads" />
+  <meta property="og:description" content="24 GHz mmWave radar that detects danger 15 seconds before it happens. President Tech Award 2026 · Incubation Program." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#top" class="brand" aria-label="SafeVision home">
+        <img src="logo.svg" alt="" class="brand__logo" width="34" height="34" />
+        <span class="brand__name">Safe<span>Vision</span></span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#problem" data-en="Problem" data-uz="Muammo">Problem</a>
+        <a href="#solution" data-en="Solution" data-uz="Yechim">Solution</a>
+        <a href="#technology" data-en="Technology" data-uz="Texnologiya">Technology</a>
+        <a href="#roadmap" data-en="Roadmap" data-uz="Yo‘l xaritasi">Roadmap</a>
+        <a href="#team" data-en="Team" data-uz="Jamoa">Team</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="langtoggle" id="langToggle" aria-label="Switch language">
+          <span data-lang="en" class="is-active">EN</span><span class="langtoggle__sep">/</span><span data-lang="uz">UZ</span>
+        </button>
+        <a class="btn btn--sm" href="#contact" data-en="Contact" data-uz="Bog‘lanish">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <span class="badge" data-en="President Tech Award 2026 · Incubation Program" data-uz="President Tech Award 2026 · Inkubatsiya dasturi">President Tech Award 2026 · Incubation Program</span>
+          <h1 class="hero__title">
+            <span data-en="Radar that knows the danger" data-uz="Xavfni ko‘rishdan oldin">Radar that knows the danger</span>
+            <span class="grad" data-en="before you see it." data-uz="biladigan radar.">before you see it.</span>
+          </h1>
+          <p class="hero__lede" data-en="SafeVision turns every car into a moving 24 GHz mmWave radar sensor — detecting road hazards up to 50 metres away and warning the driver 15 seconds in advance, with 92% accuracy in prototype testing." data-uz="SafeVision har bir avtomobilni harakatlanuvchi 24 GGs mmWave radar sensoriga aylantiradi — 50 metrgacha masofadagi xavfni aniqlaydi va haydovchini 15 soniya oldin ogohlantiradi. Prototip sinovlarida aniqlik — 92%.">SafeVision turns every car into a moving 24 GHz mmWave radar sensor — detecting road hazards up to 50 metres away and warning the driver 15 seconds in advance, with 92% accuracy in prototype testing.</p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#solution" data-en="See how it works" data-uz="Qanday ishlaydi">See how it works</a>
+            <a class="btn btn--ghost" href="#contact" data-en="Get in touch" data-uz="Bog‘lanish">Get in touch</a>
+          </div>
+          <ul class="hero__metrics">
+            <li><strong>24 GHz</strong><span data-en="mmWave radar" data-uz="mmWave radar">mmWave radar</span></li>
+            <li><strong>50 m</strong><span data-en="detection range" data-uz="aniqlash masofasi">detection range</span></li>
+            <li><strong>15 s</strong><span data-en="early warning" data-uz="oldindan ogohlantirish">early warning</span></li>
+            <li><strong>92%</strong><span data-en="accuracy" data-uz="aniqlik">accuracy</span></li>
+          </ul>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="radar">
+            <div class="radar__rings">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="radar__grid"></div>
+            <div class="radar__sweep"></div>
+            <div class="radar__center"></div>
+            <div class="radar__blip radar__blip--1"></div>
+            <div class="radar__blip radar__blip--2"></div>
+            <div class="radar__label radar__label--car">CAR</div>
+            <div class="radar__label radar__label--hazard">HAZARD · 50m</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROBLEM ============ -->
+    <section class="section" id="problem">
+      <div class="container">
+        <p class="eyebrow" data-en="The Problem" data-uz="Muammo">The Problem</p>
+        <h2 class="section__title" data-en="Every day, preventable tragedies happen on our roads." data-uz="Har kuni yo‘llarda oldini olsa bo‘ladigan fojialar sodir bo‘lmoqda.">Every day, preventable tragedies happen on our roads.</h2>
+
+        <div class="stats">
+          <div class="stat stat--danger">
+            <strong data-count="9364">9 364</strong>
+            <span data-en="road accidents registered in 2024" data-uz="2024-yilda ro‘yxatga olingan yo‘l-transport hodisasi">road accidents registered in 2024</span>
+          </div>
+          <div class="stat stat--danger">
+            <strong data-count="2203">2 203</strong>
+            <span data-en="people lost their lives" data-uz="hodisalarda halok bo‘lgan inson">people lost their lives</span>
+          </div>
+          <div class="stat">
+            <strong data-count="8901">8 901</strong>
+            <span data-en="citizens injured" data-uz="jarohat olgan fuqaro">citizens injured</span>
+          </div>
+          <div class="stat">
+            <strong>5.5M</strong>
+            <span data-en="vehicles in the country (2025)" data-uz="mamlakatdagi transport vositasi (2025)">vehicles in the country (2025)</span>
+          </div>
+        </div>
+        <p class="stats__source" data-en="Source: official statistics of the Road Safety Service, 2024–2025." data-uz="Manba: YHXX rasmiy statistikasi, 2024–2025-yillar.">Source: official statistics of the Road Safety Service, 2024–2025.</p>
+
+        <div class="cards cards--3">
+          <article class="card">
+            <span class="card__num">01</span>
+            <h3 data-en="The driver sees too late" data-uz="Haydovchi kech ko‘radi">The driver sees too late</h3>
+            <p data-en="By the time danger is noticed by eye, there is no time left to brake — human reaction is measured in seconds." data-uz="Xavfli vaziyat ko‘z bilan sezilganda tormozlash uchun vaqt qolmaydi — reaksiya vaqti sekundlar bilan o‘lchanadi.">By the time danger is noticed by eye, there is no time left to brake — human reaction is measured in seconds.</p>
+          </article>
+          <article class="card">
+            <span class="card__num">02</span>
+            <h3 data-en="Blind spots on the road" data-uz="Yo‘lda ko‘zi yo‘q nuqtalar">Blind spots on the road</h3>
+            <p data-en="Fog, dust, night and sharp turns cut visibility drastically — cameras become unreliable in exactly these conditions." data-uz="Tuman, chang, tunda va burilishlarda ko‘rish masofasi keskin qisqaradi; kameralar bunday sharoitda ishonchsiz.">Fog, dust, night and sharp turns cut visibility drastically — cameras become unreliable in exactly these conditions.</p>
+          </article>
+          <article class="card">
+            <span class="card__num">03</span>
+            <h3 data-en="Cities run without data" data-uz="Shahar ma’lumotsiz boshqariladi">Cities run without data</h3>
+            <p data-en="There is no continuous, real-time data on congestion and pedestrian safety to manage the city with." data-uz="Tirbandlik va piyodalar xavfsizligi bo‘yicha uzluksiz, real vaqtdagi ma’lumot yig‘ilmaydi.">There is no continuous, real-time data on congestion and pedestrian safety to manage the city with.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOLUTION ============ -->
+    <section class="section section--alt" id="solution">
+      <div class="container">
+        <p class="eyebrow" data-en="The Solution" data-uz="Yechim">The Solution</p>
+        <h2 class="section__title" data-en="A radar that knows the danger before it is visible." data-uz="Xavfni ko‘rishdan oldin bilib turadigan radar.">A radar that knows the danger before it is visible.</h2>
+        <p class="section__lede" data-en="SafeVision is a 24 GHz mmWave radar module installed in the car. It continuously measures the road ahead, detects dangerous situations early, and warns the driver." data-uz="SafeVision — avtomobilga o‘rnatiladigan 24 GGs mmWave radar moduli. U yo‘ldagi holatni uzluksiz o‘lchaydi, xavfli vaziyatni oldindan aniqlaydi va haydovchini ogohlantiradi.">SafeVision is a 24 GHz mmWave radar module installed in the car. It continuously measures the road ahead, detects dangerous situations early, and warns the driver.</p>
+
+        <div class="cards cards--3">
+          <article class="card card--feature">
+            <div class="card__icon" aria-hidden="true">⏱</div>
+            <h3 data-en="Early warning" data-uz="Erta ogohlantirish">Early warning</h3>
+            <p class="card__kicker" data-en="Danger 15 seconds ahead" data-uz="Xavf 15 soniya oldin">Danger 15 seconds ahead</p>
+            <p data-en="The radar detects obstacles and dangerous approaches up to 50 m away, so the driver has time to brake." data-uz="Radar 50 metrgacha masofadagi to‘siq va xavfli yaqinlashuvni aniqlaydi, haydovchi tormozlashga ulguradi.">The radar detects obstacles and dangerous approaches up to 50 m away, so the driver has time to brake.</p>
+          </article>
+          <article class="card card--feature">
+            <div class="card__icon" aria-hidden="true">🛰</div>
+            <h3 data-en="Smart city" data-uz="Aqlli shahar">Smart city</h3>
+            <p class="card__kicker" data-en="Every car is a sensor" data-uz="Har bir mashina — sensor">Every car is a sensor</p>
+            <p data-en="Collected data is sent to the city transport system: congestion, dangerous intersections, pedestrian flow." data-uz="Yig‘ilgan ma’lumot shahar transport tizimiga uzatiladi: tirbandlik, xavfli chorrahalar, piyoda oqimi.">Collected data is sent to the city transport system: congestion, dangerous intersections, pedestrian flow.</p>
+          </article>
+          <article class="card card--feature">
+            <div class="card__icon" aria-hidden="true">🌫</div>
+            <h3 data-en="Weather-independent" data-uz="Ob-havodan mustaqil">Weather-independent</h3>
+            <p class="card__kicker" data-en="What a camera cannot do" data-uz="Kamera qila olmaydigan ish">What a camera cannot do</p>
+            <p data-en="mmWave radar works reliably in fog, dust, rain and darkness — the very conditions where cameras fail." data-uz="mmWave radar tuman, chang, yomg‘ir va qorong‘ilikda ham barqaror ishlaydi — bu kameraning asosiy zaifligi.">mmWave radar works reliably in fog, dust, rain and darkness — the very conditions where cameras fail.</p>
+          </article>
+        </div>
+
+        <div class="highlight">
+          <div class="highlight__ring"><strong>92%</strong></div>
+          <p data-en="Hazard-detection accuracy measured in prototype testing." data-uz="Prototip sinovlarida xavfli vaziyatni aniqlash aniqligi.">Hazard-detection accuracy measured in prototype testing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TECHNOLOGY ============ -->
+    <section class="section" id="technology">
+      <div class="container">
+        <p class="eyebrow" data-en="How it works" data-uz="Texnologiya">How it works</p>
+        <h2 class="section__title" data-en="Four steps: from wave to warning." data-uz="To‘rt bosqichda: to‘lqindan ogohlantirishgacha.">Four steps: from wave to warning.</h2>
+
+        <ol class="steps">
+          <li class="step">
+            <span class="step__n">1</span>
+            <h3 data-en="Radar scans" data-uz="Radar skanerlaydi">Radar scans</h3>
+            <p data-en="The 24 GHz antenna continuously scans the field ahead and measures the returning signal." data-uz="24 GGs antenna oldindagi maydonni uzluksiz skanerlaydi va qaytgan signalni o‘lchaydi.">The 24 GHz antenna continuously scans the field ahead and measures the returning signal.</p>
+          </li>
+          <li class="step">
+            <span class="step__n">2</span>
+            <h3 data-en="Controller analyses" data-uz="Kontroller tahlil qiladi">Controller analyses</h3>
+            <p data-en="The microcontroller computes distance, speed and closing rate to assess the level of danger." data-uz="Mikrokontroller masofa, tezlik va yaqinlashish sur’atini hisoblab, xavf darajasini baholaydi.">The microcontroller computes distance, speed and closing rate to assess the level of danger.</p>
+          </li>
+          <li class="step">
+            <span class="step__n">3</span>
+            <h3 data-en="Driver is warned" data-uz="Haydovchi ogohlantiriladi">Driver is warned</h3>
+            <p data-en="When danger is detected, an audible and visual alert is issued — on average 15 seconds ahead." data-uz="Xavf aniqlanganda tovushli va vizual signal beriladi — o‘rtacha 15 soniya oldin.">When danger is detected, an audible and visual alert is issued — on average 15 seconds ahead.</p>
+          </li>
+          <li class="step">
+            <span class="step__n">4</span>
+            <h3 data-en="Data reaches the centre" data-uz="Ma’lumot markazga boradi">Data reaches the centre</h3>
+            <p data-en="Anonymous data is sent to the city control panel over the GSM module." data-uz="GSM modul orqali anonim ma’lumot shahar boshqaruv paneliga uzatiladi.">Anonymous data is sent to the city control panel over the GSM module.</p>
+          </li>
+        </ol>
+
+        <div class="specs">
+          <div><strong>24 GHz</strong><span data-en="mmWave frequency" data-uz="mmWave chastota">mmWave frequency</span></div>
+          <div><strong>50 m</strong><span data-en="detection range" data-uz="aniqlash masofasi">detection range</span></div>
+          <div><strong>15 s</strong><span data-en="warning time" data-uz="ogohlantirish vaqti">warning time</span></div>
+          <div><strong>92%</strong><span data-en="detection accuracy" data-uz="aniqlash aniqligi">detection accuracy</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CUSTOMERS ============ -->
+    <section class="section section--alt" id="customers">
+      <div class="container">
+        <p class="eyebrow" data-en="Market" data-uz="Mijozlar">Market</p>
+        <h2 class="section__title" data-en="Who pays — and why." data-uz="Kim uchun va nima uchun to‘laydi.">Who pays — and why.</h2>
+
+        <div class="cards cards--3">
+          <article class="card card--market">
+            <span class="tag tag--primary">B2G</span>
+            <h3 data-en="City authorities & ministries" data-uz="Shahar hokimliklari va vazirliklar">City authorities &amp; ministries</h3>
+            <p class="card__kicker" data-en="Primary customer" data-uz="Asosiy mijoz">Primary customer</p>
+            <ul>
+              <li data-en="Real-time data on road infrastructure" data-uz="Yo‘l infratuzilmasi bo‘yicha real vaqtdagi ma’lumot">Real-time data on road infrastructure</li>
+              <li data-en="Dangerous intersections identified with numbers" data-uz="Xavfli chorrahalarni raqamlar bilan aniqlash">Dangerous intersections identified with numbers</li>
+              <li data-en="Rollout together with the Ministry of Transport" data-uz="Transport vazirligi bilan birgalikda joriy etish">Rollout together with the Ministry of Transport</li>
+            </ul>
+          </article>
+          <article class="card card--market">
+            <span class="tag">B2B</span>
+            <h3 data-en="Transport companies" data-uz="Transport kompaniyalari">Transport companies</h3>
+            <p class="card__kicker" data-en="Recurring revenue" data-uz="Barqaror daromad">Recurring revenue</p>
+            <ul>
+              <li data-en="Fleet installation for cargo & passenger transport" data-uz="Yuk va yo‘lovchi tashish parki uchun to‘plamli o‘rnatish">Fleet installation for cargo &amp; passenger transport</li>
+              <li data-en="Lower insurance costs and fewer accidents" data-uz="Sug‘urta xarajatlari va avariyalar kamayadi">Lower insurance costs and fewer accidents</li>
+              <li data-en="Reporting on driver behaviour" data-uz="Haydovchi xatti-harakati bo‘yicha hisobot">Reporting on driver behaviour</li>
+            </ul>
+          </article>
+          <article class="card card--market">
+            <span class="tag">B2C</span>
+            <h3 data-en="Private drivers" data-uz="Xususiy haydovchilar">Private drivers</h3>
+            <p class="card__kicker" data-en="Next stage" data-uz="Keyingi bosqich">Next stage</p>
+            <ul>
+              <li data-en="Purchase and install the device" data-uz="Qurilmani sotib olish va o‘rnatish">Purchase and install the device</li>
+              <li data-en="Warning history through a mobile app" data-uz="Mobil ilova orqali ogohlantirish tarixi">Warning history through a mobile app</li>
+              <li data-en="A broad market of 5.5M vehicles" data-uz="5,5 mln transport vositasidan iborat keng bozor">A broad market of 5.5M vehicles</li>
+            </ul>
+          </article>
+        </div>
+        <p class="section__note" data-en="Entry point — government: pilot projects start with city authorities and the Ministry of Transport, then expand to transport companies and the private market." data-uz="Kirish nuqtasi — davlat: pilot loyihalar hokimliklar va Transport vazirligi bilan boshlanadi, so‘ngra transport kompaniyalari va xususiy bozorga chiqiladi.">Entry point — government: pilot projects start with city authorities and the Ministry of Transport, then expand to transport companies and the private market.</p>
+      </div>
+    </section>
+
+    <!-- ============ INNOVATION ============ -->
+    <section class="section" id="innovation">
+      <div class="container">
+        <p class="eyebrow" data-en="Innovation" data-uz="Innovatsiya">Innovation</p>
+        <h2 class="section__title" data-en="Why this differs from what exists today." data-uz="Nima uchun bu yechim mavjudlaridan farq qiladi.">Why this differs from what exists today.</h2>
+
+        <div class="table-wrap">
+          <table class="compare">
+            <thead>
+              <tr>
+                <th data-en="Criterion" data-uz="Mezon">Criterion</th>
+                <th class="is-us">SafeVision</th>
+                <th data-en="Road cameras" data-uz="Yo‘l kameralari">Road cameras</th>
+                <th data-en="Factory ADAS" data-uz="Zavod ADAS tizimlari">Factory ADAS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-en="Data source" data-uz="Ma’lumot manbayi">Data source</td>
+                <td class="is-us" data-en="Every car — a moving sensor" data-uz="Har bir avtomobil — mobil sensor">Every car — a moving sensor</td>
+                <td data-en="Static points" data-uz="Statik nuqtalar">Static points</td>
+                <td data-en="Only that car" data-uz="Faqat shu avtomobil">Only that car</td>
+              </tr>
+              <tr>
+                <td data-en="Fog, dust, night" data-uz="Tuman, chang, tunda">Fog, dust, night</td>
+                <td class="is-us" data-en="Works reliably" data-uz="Barqaror ishlaydi">Works reliably</td>
+                <td data-en="Quality drops sharply" data-uz="Sifat keskin pasayadi">Quality drops sharply</td>
+                <td data-en="Camera part weakens" data-uz="Kamera qismi zaiflashadi">Camera part weakens</td>
+              </tr>
+              <tr>
+                <td data-en="Warning the driver" data-uz="Haydovchini ogohlantirish">Warning the driver</td>
+                <td class="is-us" data-en="15 seconds ahead" data-uz="15 soniya oldin">15 seconds ahead</td>
+                <td data-en="No — only records" data-uz="Yo‘q — faqat qayd etadi">No — only records</td>
+                <td data-en="Yes, but on expensive cars" data-uz="Bor, lekin qimmat avtomobillarda">Yes, but on expensive cars</td>
+              </tr>
+              <tr>
+                <td data-en="Connection to city system" data-uz="Shahar tizimiga ulanish">Connection to city system</td>
+                <td class="is-us" data-en="Transmits in real time" data-uz="Real vaqtda uzatadi">Transmits in real time</td>
+                <td data-en="Limited" data-uz="Cheklangan">Limited</td>
+                <td data-en="No" data-uz="Yo‘q">No</td>
+              </tr>
+              <tr>
+                <td data-en="Fit to an older car" data-uz="Eski avtomobilga o‘rnatish">Fit to an older car</td>
+                <td class="is-us" data-en="Possible" data-uz="Mumkin">Possible</td>
+                <td data-en="Not applicable" data-uz="Tegishli emas">Not applicable</td>
+                <td data-en="Not possible" data-uz="Mumkin emas">Not possible</td>
+              </tr>
+              <tr>
+                <td data-en="Cost per device" data-uz="Bir qurilma tannarxi">Cost per device</td>
+                <td class="is-us" data-en="~1.63M UZS" data-uz="~1,63 mln so‘m">~1.63M UZS</td>
+                <td data-en="High (infrastructure)" data-uz="Yuqori (infratuzilma)">High (infrastructure)</td>
+                <td data-en="Built into the car price" data-uz="Avtomobil narxiga kiritilgan">Built into the car price</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="section__note" data-en="The core innovation is a network of moving sensors instead of static infrastructure: as the number of cars grows, coverage and data quality improve on their own." data-uz="Asosiy innovatsiya — statik infratuzilma o‘rniga harakatlanuvchi sensorlar tarmog‘i: mashinalar soni ortgan sari tizim qamrovi va ma’lumot sifati o‘z-o‘zidan yaxshilanadi.">The core innovation is a network of moving sensors instead of static infrastructure: as the number of cars grows, coverage and data quality improve on their own.</p>
+      </div>
+    </section>
+
+    <!-- ============ GOALS ============ -->
+    <section class="section section--alt" id="goals">
+      <div class="container">
+        <p class="eyebrow" data-en="Goals" data-uz="Maqsadlar">Goals</p>
+        <h2 class="section__title" data-en="What we want to achieve." data-uz="Nimaga erishmoqchimiz.">What we want to achieve.</h2>
+        <div class="cards cards--3">
+          <article class="card">
+            <p class="card__big grad">20–30%</p>
+            <h3 data-en="Road safety" data-uz="Yo‘l xavfsizligi">Road safety</h3>
+            <p data-en="Reduce accident-causing situations in cars fitted with the system." data-uz="Tizim o‘rnatilgan avtomobillarda avariyaga olib keluvchi vaziyatlarni kamaytirish.">Reduce accident-causing situations in cars fitted with the system.</p>
+          </article>
+          <article class="card">
+            <p class="card__big grad" data-en="Real time" data-uz="Real vaqt">Real time</p>
+            <h3 data-en="Urban infrastructure" data-uz="Shahar infratuzilmasi">Urban infrastructure</h3>
+            <p data-en="Manage congestion and pedestrian safety on continuous, real-time data." data-uz="Tirbandlik va piyodalar xavfsizligini uzluksiz ma’lumot asosida boshqarish.">Manage congestion and pedestrian safety on continuous, real-time data.</p>
+          </article>
+          <article class="card">
+            <p class="card__big grad" data-en="2 ministries" data-uz="2 vazirlik">2 ministries</p>
+            <h3 data-en="Government partnership" data-uz="Davlat bilan hamkorlik">Government partnership</h3>
+            <p data-en="Formalise pilot projects with the Ministry of Transport and related agencies." data-uz="Transport vazirligi va tegishli idoralar bilan pilot loyihalarni rasmiylashtirish.">Formalise pilot projects with the Ministry of Transport and related agencies.</p>
+          </article>
+        </div>
+        <div class="callout">
+          <h4 data-en="Future direction" data-uz="Kelgusi yo‘nalish">Future direction</h4>
+          <p data-en="The same mmWave sensor technology can be applied in healthcare — for example, low-cost detection of breathing disorders such as sleep apnea. This direction opens after the core product is established in the market." data-uz="Xuddi shu mmWave sensor texnologiyasi tibbiyotda ham qo‘llanilishi mumkin — masalan, uyqu apnesi kabi nafas buzilishlarini arzon aniqlash. Bu yo‘nalish asosiy mahsulot bozorda mustahkamlangandan keyin ochiladi.">The same mmWave sensor technology can be applied in healthcare — for example, low-cost detection of breathing disorders such as sleep apnea. This direction opens after the core product is established in the market.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ROADMAP ============ -->
+    <section class="section" id="roadmap">
+      <div class="container">
+        <p class="eyebrow" data-en="Roadmap" data-uz="Yo‘l xaritasi">Roadmap</p>
+        <h2 class="section__title" data-en="A 12-month plan for the incubation period." data-uz="Inkubatsiya davri uchun 12 oylik reja.">A 12-month plan for the incubation period.</h2>
+
+        <ol class="timeline">
+          <li class="tl">
+            <span class="tl__phase" data-en="Months 1–3" data-uz="1–3 oy">Months 1–3</span>
+            <h3 data-en="Team & design" data-uz="Jamoa va dizayn">Team &amp; design</h3>
+            <p data-en="Complete the team; prepare the CAD model and technical drawings of the radar device; purchase components." data-uz="Jamoa to‘ldiriladi, radar qurilmasining CAD modeli va texnik chizmalari tayyorlanadi, komponentlar xarid qilinadi.">Complete the team; prepare the CAD model and technical drawings of the radar device; purchase components.</p>
+          </li>
+          <li class="tl">
+            <span class="tl__phase" data-en="Months 4–6" data-uz="4–6 oy">Months 4–6</span>
+            <h3 data-en="10 prototypes" data-uz="10 ta prototip">10 prototypes</h3>
+            <p data-en="Assemble 10 devices, 3D-print the housings, write the software and install on 10 cars." data-uz="10 ta qurilma yig‘iladi, korpuslar 3D bosma qilinadi, dasturiy ta’minot yozilib, 10 ta avtomobilga o‘rnatiladi.">Assemble 10 devices, 3D-print the housings, write the software and install on 10 cars.</p>
+          </li>
+          <li class="tl">
+            <span class="tl__phase" data-en="Months 7–9" data-uz="7–9 oy">Months 7–9</span>
+            <h3 data-en="Field tests" data-uz="Dala sinovlari">Field tests</h3>
+            <p data-en="Collect data in real road conditions, tune the detection algorithm, reduce the false-alarm rate." data-uz="Real yo‘l sharoitida ma’lumot to‘planadi, aniqlash algoritmi sozlanadi, xato signal darajasi kamaytiriladi.">Collect data in real road conditions, tune the detection algorithm, reduce the false-alarm rate.</p>
+          </li>
+          <li class="tl">
+            <span class="tl__phase" data-en="Months 10–12" data-uz="10–12 oy">Months 10–12</span>
+            <h3 data-en="Pilot & series" data-uz="Pilot va seriya">Pilot &amp; series</h3>
+            <p data-en="Pilot project with a city authority, the certification process, and preparation for a 1,000-unit series." data-uz="Hokimlik bilan pilot loyiha, sertifikatlash jarayoni va 1000 donalik seriyaga tayyorgarlik.">Pilot project with a city authority, the certification process, and preparation for a 1,000-unit series.</p>
+          </li>
+        </ol>
+
+        <div class="specs specs--3">
+          <div><strong data-en="10 tested" data-uz="10 sinovdan">10 tested</strong><span data-en="devices proven on the road" data-uz="o‘tgan qurilma">devices proven on the road</span></div>
+          <div><strong data-en="1+ pilot" data-uz="1+ pilot">1+ pilot</strong><span data-en="with a city authority" data-uz="hokimlik bilan">with a city authority</span></div>
+          <div><strong data-en="1,000 ready" data-uz="1000 seriya">1,000 ready</strong><span data-en="order ready for series" data-uz="tayyor buyurtma">order ready for series</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BUDGET ============ -->
+    <section class="section section--alt" id="budget">
+      <div class="container">
+        <p class="eyebrow" data-en="Budget" data-uz="Byudjet">Budget</p>
+        <h2 class="section__title" data-en="Component cost for a 1,000-unit series." data-uz="1000 donalik seriya uchun komponentlar xarajati.">Component cost for a 1,000-unit series.</h2>
+
+        <div class="budget">
+          <div class="table-wrap">
+            <table class="budget__table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th data-en="Component" data-uz="Komponent">Component</th>
+                  <th data-en="Qty" data-uz="Miqdor">Qty</th>
+                  <th data-en="Unit (UZS)" data-uz="Birlik narxi (so‘m)">Unit (UZS)</th>
+                  <th data-en="Total (UZS)" data-uz="Jami (so‘m)">Total (UZS)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td data-en="Antenna (24 GHz, 10×10 cm)" data-uz="Antenna (24 GGs, 10×10 sm)">Antenna (24 GHz, 10×10 cm)</td><td>1 000</td><td>1 000 000</td><td>1 000 000 000</td></tr>
+                <tr><td>2</td><td data-en="Microcontroller (Arduino Nano)" data-uz="Mikrokontroller (Arduino Nano)">Microcontroller (Arduino Nano)</td><td>1 000</td><td>150 000</td><td>150 000 000</td></tr>
+                <tr><td>3</td><td data-en="GSM module (SIM800L)" data-uz="GSM modul (SIM800L)">GSM module (SIM800L)</td><td>1 000</td><td>200 000</td><td>200 000 000</td></tr>
+                <tr><td>4</td><td data-en="PCB (printed circuit board)" data-uz="PCB (bosma plata)">PCB (printed circuit board)</td><td>1 000</td><td>100 000</td><td>100 000 000</td></tr>
+                <tr><td>5</td><td data-en="Housing (ABS, 3D print, 1 kg)" data-uz="Korpus (ABS, 3D bosma, 1 kg)">Housing (ABS, 3D print, 1 kg)</td><td>1 000</td><td>134 100</td><td>134 100 000</td></tr>
+                <tr><td>6</td><td data-en="Cables and connectors" data-uz="Kabel va ulagichlar">Cables and connectors</td><td>1 000</td><td>50 000</td><td>50 000 000</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><td colspan="4" data-en="Total" data-uz="Jami">Total</td><td>1 634 100 000</td></tr>
+              </tfoot>
+            </table>
+          </div>
+          <div class="budget__side">
+            <div class="budget__stat">
+              <strong>1.63M <span data-en="UZS" data-uz="so‘m">UZS</span></strong>
+              <span data-en="Component cost of a single device" data-uz="Bitta qurilmaning komponent tannarxi">Component cost of a single device</span>
+            </div>
+            <div class="budget__stat">
+              <strong>61%</strong>
+              <span data-en="Share of cost in the antenna — the key optimisation point" data-uz="Tannarxning antennaga to‘g‘ri keladigan ulushi — asosiy optimallashtirish nuqtasi">Share of cost in the antenna — the key optimisation point</span>
+            </div>
+            <div class="budget__stat">
+              <strong>1.63B <span data-en="UZS" data-uz="so‘m">UZS</span></strong>
+              <span data-en="Total component budget for a 1,000-unit series" data-uz="1000 donalik seriya uchun umumiy komponent byudjeti">Total component budget for a 1,000-unit series</span>
+            </div>
+          </div>
+        </div>
+        <p class="section__note" data-en="As volume grows, component prices fall; a significant cost reduction is planned in series production." data-uz="Miqdor oshgani sari komponent narxlari pasayadi; seriyali ishlab chiqarishda tannarxni sezilarli kamaytirish rejalashtirilgan.">As volume grows, component prices fall; a significant cost reduction is planned in series production.</p>
+      </div>
+    </section>
+
+    <!-- ============ TEAM ============ -->
+    <section class="section" id="team">
+      <div class="container">
+        <p class="eyebrow" data-en="Team" data-uz="Jamoa">Team</p>
+        <h2 class="section__title" data-en="The team that will take the device to the road." data-uz="Qurilmani yo‘lga olib chiqadigan jamoa.">The team that will take the device to the road.</h2>
+
+        <div class="cards cards--3">
+          <article class="card card--person">
+            <div class="avatar">NX</div>
+            <h3>Nurbol Xaydaraliyev</h3>
+            <p class="card__kicker" data-en="Founder · Technical lead" data-uz="Asoschi · Texnik yetakchi">Founder · Technical lead</p>
+            <p data-en="Student at Tashkent University of Information Technologies (TUIT). Author of the SafeVision idea, working on the technical concept and prototype of the radar module." data-uz="TATU talabasi. SafeVision g‘oyasi muallifi, radar modulining texnik konsepsiyasi va prototip ishlanmasi ustida ishlamoqda.">Student at Tashkent University of Information Technologies (TUIT). Author of the SafeVision idea, working on the technical concept and prototype of the radar module.</p>
+          </article>
+          <article class="card card--person card--open">
+            <div class="avatar avatar--open">+</div>
+            <h3 data-en="Electronics & hardware" data-uz="Elektronika va apparat">Electronics &amp; hardware</h3>
+            <p class="card__kicker" data-en="Open role" data-uz="Ochiq o‘rin">Open role</p>
+            <p data-en="Responsible for PCB design, antenna tuning, the housing and assembly of the device." data-uz="PCB dizayni, antenna sozlash, korpus va qurilmani yig‘ish uchun mas’ul.">Responsible for PCB design, antenna tuning, the housing and assembly of the device.</p>
+          </article>
+          <article class="card card--person card--open">
+            <div class="avatar avatar--open">+</div>
+            <h3 data-en="Software & data" data-uz="Dasturiy ta’minot va ma’lumot">Software &amp; data</h3>
+            <p class="card__kicker" data-en="Open role" data-uz="Ochiq o‘rin">Open role</p>
+            <p data-en="Responsible for the microcontroller firmware, GSM transmission and the city dashboard." data-uz="Mikrokontroller dasturi, GSM orqali uzatish va shahar paneli uchun mas’ul.">Responsible for the microcontroller firmware, GSM transmission and the city dashboard.</p>
+          </article>
+        </div>
+        <p class="section__note" data-en="In addition, a scientific advisor in radio engineering and a mentor from the road-safety field will be involved. This is exactly the core value expected from the incubation program." data-uz="Qo‘shimcha: radiotexnika bo‘yicha ilmiy maslahatchi va yo‘l xavfsizligi sohasidan mentor jalb qilinadi. Inkubatsiya dasturidan kutilayotgan asosiy qiymat ham aynan shu.">In addition, a scientific advisor in radio engineering and a mentor from the road-safety field will be involved. This is exactly the core value expected from the incubation program.</p>
+      </div>
+    </section>
+
+    <!-- ============ ASK ============ -->
+    <section class="section section--alt" id="ask">
+      <div class="container">
+        <p class="eyebrow" data-en="The Ask" data-uz="So‘rov">The Ask</p>
+        <h2 class="section__title" data-en="What we expect from the incubation program." data-uz="Inkubatsiya dasturidan nimani kutamiz.">What we expect from the incubation program.</h2>
+
+        <div class="cards cards--4">
+          <article class="card card--ask">
+            <span class="card__num">01</span>
+            <h3 data-en="Hardware lab" data-uz="Apparat laboratoriyasi">Hardware lab</h3>
+            <p data-en="Equipment and 3D-printing capacity to test the radar module." data-uz="Radar modulini sinash uchun asbob-uskuna va 3D bosma imkoniyati.">Equipment and 3D-printing capacity to test the radar module.</p>
+          </article>
+          <article class="card card--ask">
+            <span class="card__num">02</span>
+            <h3 data-en="Certification" data-uz="Sertifikatlash">Certification</h3>
+            <p data-en="Help with the permits and standards needed to fit the device to a car." data-uz="Qurilmani avtomobilga o‘rnatish uchun zarur ruxsat va standartlar bo‘yicha yordam.">Help with the permits and standards needed to fit the device to a car.</p>
+          </article>
+          <article class="card card--ask">
+            <span class="card__num">03</span>
+            <h3 data-en="Government access" data-uz="Davlat bilan aloqa">Government access</h3>
+            <p data-en="Formalise a pilot project with city authorities and the Ministry of Transport." data-uz="Hokimliklar va Transport vazirligi bilan pilot loyihani rasmiylashtirish.">Formalise a pilot project with city authorities and the Ministry of Transport.</p>
+          </article>
+          <article class="card card--ask">
+            <span class="card__num">04</span>
+            <h3 data-en="Funding" data-uz="Moliyalashtirish">Funding</h3>
+            <p data-en="A grant to complete the team and assemble the first 10 prototypes." data-uz="Jamoani to‘ldirish va birinchi 10 ta prototipni yig‘ish uchun grant.">A grant to complete the team and assemble the first 10 prototypes.</p>
+          </article>
+        </div>
+
+        <div class="alloc">
+          <p class="alloc__title" data-en="How the funding is allocated" data-uz="Mablag‘ qanday taqsimlanadi">How the funding is allocated</p>
+          <div class="alloc__row">
+            <div class="alloc__item" style="--w:45%">
+              <div class="alloc__bar"><span></span></div>
+              <strong>45%</strong>
+              <span data-en="Components & prototypes" data-uz="Komponentlar va prototiplar">Components &amp; prototypes</span>
+            </div>
+            <div class="alloc__item" style="--w:25%">
+              <div class="alloc__bar"><span></span></div>
+              <strong>25%</strong>
+              <span data-en="Team & development" data-uz="Jamoa va ishlab chiqish">Team &amp; development</span>
+            </div>
+            <div class="alloc__item" style="--w:20%">
+              <div class="alloc__bar"><span></span></div>
+              <strong>20%</strong>
+              <span data-en="Testing, certification, pilot" data-uz="Sinov, sertifikatlash, pilot">Testing, certification, pilot</span>
+            </div>
+            <div class="alloc__item" style="--w:10%">
+              <div class="alloc__bar"><span></span></div>
+              <strong>10%</strong>
+              <span data-en="Operational costs" data-uz="Operatsion xarajatlar">Operational costs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA / CONTACT ============ -->
+    <section class="cta" id="contact">
+      <div class="container cta__inner">
+        <h2 data-en="Not after the danger is seen — 15 seconds before." data-uz="Xavfni ko‘rgandan keyin emas — 15 soniya oldin bilish.">Not after the danger is seen — 15 seconds before.</h2>
+        <p data-en="The technology is chosen, the cost is calculated, the plan is clear. What is needed now is to complete the team, take the prototype to the road, and start a pilot project with the government." data-uz="Texnologiya tanlangan, tannarx hisoblangan, reja aniq. Endi kerak bo‘lgani — jamoani to‘ldirish, prototipni yo‘lga chiqarish va davlat bilan pilot loyihani boshlash.">The technology is chosen, the cost is calculated, the plan is clear. What is needed now is to complete the team, take the prototype to the road, and start a pilot project with the government.</p>
+        <div class="cta__links">
+          <a class="btn btn--primary" href="https://t.me/Nurbol_xan" target="_blank" rel="noopener">Telegram · @Nurbol_xan</a>
+          <a class="btn btn--ghost" href="tel:+998931074221">+998 93 107 42 21</a>
+          <a class="btn btn--ghost" href="https://github.com/Nurbol-Xan" target="_blank" rel="noopener">GitHub · Nurbol-Xan</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="brand">
+        <img src="logo.svg" alt="" class="brand__logo" width="28" height="28" />
+        <span class="brand__name">Safe<span>Vision</span></span>
+      </div>
+      <p class="footer__tag" data-en="A modern solution for safe roads." data-uz="Xavfsiz yo‘llar uchun zamonaviy yechim.">A modern solution for safe roads.</p>
+      <p class="footer__meta">President Tech Award 2026 · <span data-en="Incubation Program" data-uz="Inkubatsiya dasturi">Incubation Program</span></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
