@@ -85,3 +85,76 @@ Incubation Program application.
 ## License
 
 [MIT](LICENSE)
+
+---
+
+## The detection code
+
+`safevision/` is the working core of the project: the signal chain that turns a
+24 GHz FMCW radar's raw ADC samples into a driver warning. It has **no
+dependencies** - pure Python standard library - so a reviewer can clone and run
+it immediately.
+
+| Module | Purpose |
+|--------|---------|
+| `safevision/radar.py` | Sensor model plus the signal chain: range FFT -> Doppler FFT -> CA-CFAR detection |
+| `safevision/simulator.py` | Generates the raw beat signal for a scene, so the chain is testable without hardware |
+| `safevision/hazard.py` | Time-to-contact, braking distance and warning levels |
+| `safevision/v2v.py` | Shared hazard map - the fleet relay that produces the 15-second warning |
+| `demo.py` | End-to-end runnable demo |
+| `tests/test_pipeline.py` | 14 tests covering the whole pipeline |
+
+### Run it
+
+```bash
+python3 demo.py                 # default scene: pothole at 28 m, stalled vehicle at 62 m
+python3 -m unittest discover -s tests -v
+```
+
+Describe your own scene:
+
+```bash
+python3 demo.py --speed 100 --targets "pothole:35:0.6,debris:70:1.5"
+```
+
+### What the demo shows
+
+```
+Detections (2):
+    28.2 m   -22.8 m/s   44.4 dB
+    61.8 m   -22.8 m/s   42.1 dB
+
+Driver warnings:
+  [CRITICAL] Brake now - hazard 28 m ahead  (TTC 1.2 s, confidence 100%)
+  [CRITICAL] Brake now - hazard 62 m ahead  (TTC 2.7 s, confidence 100%)
+
+Shared hazard map: 2 hazard(s) broadcast, 2 on the map
+Following vehicle, still 333 m short of the hazard (its own radar horizon is only 77 m):
+  [CRITICAL] hazard in 333 m - 15 s of warning, confidence 100%
+```
+
+Both hazards are recovered to within one range gate (0.6 m) and their closing
+speed to within two Doppler bins, with no false alarms.
+
+### Where the two headline numbers come from
+
+- **50 m detection range** - the single-sensor horizon. With the configuration in
+  `RadarConfig` (250 MHz sweep, 4 MHz ADC) the unambiguous maximum is ~77 m, and
+  50 m is the range at which a pothole-sized 0.5 m^2 target still clears the CFAR
+  threshold reliably.
+- **15 s of warning** - the fleet horizon, not the single-sensor one. One sensor
+  at 80 km/h gives about 3 seconds. The 15 seconds comes from `v2v.py`: a hazard
+  confirmed by one vehicle is broadcast, and every following vehicle is warned
+  roughly 330 m ahead of it - far beyond what its own radar can see.
+
+### Design notes
+
+- **CA-CFAR, not a fixed threshold.** Road clutter changes constantly with
+  surface, traffic and weather; cell-averaging CFAR holds the false-alarm rate
+  constant instead of the threshold.
+- **Time-to-contact, not distance.** A 60 m gap is comfortable at 40 km/h and an
+  emergency at 120 km/h, so warnings are ranked by TTC and compared against the
+  driver's actual braking distance, including a 2.5 s reaction time.
+- **Confidence compounds across vehicles.** Repeated independent sightings of the
+  same spot raise confidence but never reach certainty, so one stray reflection
+  can be outvoted while a real pothole is confirmed.
